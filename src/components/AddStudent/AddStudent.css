@@ -1,0 +1,23 @@
+.addStudent form{
+    padding: 10% 25%;
+    margin-right: 5%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color:#F5F5DC;
+    border-radius: 20px;
+}
+.addStudent input{
+    margin: 5px 5px;
+   
+}
+
+.addStudent h1{
+    margin-left: 100px;
+}
+@media screen and (max-width: 600px) {
+    
+    .addStudent input{
+       
+        width: 300%;
+    }
+  }
