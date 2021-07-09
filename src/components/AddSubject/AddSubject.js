@@ -42,7 +42,7 @@ const AddSubject = () => {
                         <Navbar></Navbar>
                     </div>
                 <section className="mb-3 addStudent">
-                    <h1 className="text-center mt-3"><span style={{color: '#40E09C'}}>Add</span> Student</h1>
+                    <h1 className="text-center mt-3"><span style={{color: '#40E09C'}}>Add</span> Subject</h1>
                     <br />
                     
                     <div style={{ border: '1px solid #F5F5DC', height: '500px' }} className="ms-5 pt-5 ps-5">
