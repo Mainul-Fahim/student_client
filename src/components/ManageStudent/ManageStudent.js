@@ -3,22 +3,31 @@ import Navbar from '../Home/Navbar/Navbar';
 
 const ManageStudent = () => {
 
-    const [services, setServices] = useState([]);
+    const [students, setStudents] = useState([]);
+    const [subjects, setSubjects] = useState([]);
+
+
     useEffect(() => {
-        fetch('https://safe-dusk-28084.herokuapp.com/services')
+        fetch('http://localhost:5000/students')
             .then(res => res.json())
-            .then(data => setServices(data));
+            .then(data => setStudents(data));
     }, [])
 
-    const deleteService = id => {
+    useEffect(() => {
+        fetch('http://localhost:5000/subjects')
+            .then(res => res.json())
+            .then(data => setSubjects(data));
+    }, [])
+
+    const deleteStudent = id => {
         console.log(id);
-        fetch(`https://safe-dusk-28084.herokuapp.com/delete/${id}`, {
+        fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
                 console.log("deleted", result);
-                const deletedBook = document.getElementById('deletedService');
+                const deletedBook = document.getElementById('deletedStudent');
                 deletedBook.style.display = 'none';
             })
     }
@@ -32,7 +41,7 @@ const ManageStudent = () => {
                 <div>
                     <h1 className="text-center mt-3">Student Table</h1>
                     <br />
-                    <div style={{ border: '1px solid cyan', height: '500px' }} className="ms-5 pt-5 ps-5 pe-5 table-responsive-sm">
+                    <div style={{ height: '500px' }} class="table-responsive-sm" className="ms-5 pt-5 ps-5 pe-5">
                         <table class="table table-striped table-dark">
                             <thead>
                                 <tr>
@@ -40,21 +49,20 @@ const ManageStudent = () => {
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Date of Birth</th>
-                                    <th>Subjects</th>
+                                    {/* <th>Subjects</th> */}
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 {
-                                    services.map(service => <tr id="deletedService">
-                                        <td>{service._id}</td>
-                                        <td>
-                                            {service.serviceName}</td>
-                                        <td></td>
-                                        <td>{service.price}</td>
-                                        <td></td>
-                                        <td><button onClick={() => deleteService(service._id)} className="btn btn-primary">Delete</button></td></tr>)
+                                    students.map(student => <tr id="deletedStudent">
+                                        <td>{student.name}</td>
+                                        <td> {student.email}</td>
+                                        <td>{student.phone}</td>
+                                        <td>{student.dateOfBirth}</td>
+                                        {/* {subjects.map(subject=><td>{subject.name}</td>)} */}
+                                        <td><button onClick={() => deleteStudent(student._id)} className="btn btn-primary">Delete</button></td></tr>)
                                 }
 
 

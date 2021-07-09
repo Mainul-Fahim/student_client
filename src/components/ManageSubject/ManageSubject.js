@@ -3,16 +3,17 @@ import Navbar from '../Home/Navbar/Navbar';
 
 const ManageSubject = () => {
 
-    const [services, setServices] = useState([]);
+    const [subjects, setSubjects] = useState([]);
+
     useEffect(() => {
-        fetch('https://safe-dusk-28084.herokuapp.com/services')
+        fetch('http://localhost:5000/subjects')
             .then(res => res.json())
-            .then(data => setServices(data));
+            .then(data => setSubjects(data));
     }, [])
 
     const deleteService = id => {
         console.log(id);
-        fetch(`https://safe-dusk-28084.herokuapp.com/delete/${id}`, {
+        fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -33,7 +34,7 @@ const ManageSubject = () => {
                 <div>
                     <h1 className="text-center mt-3">Student Table</h1>
                     <br />
-                    <div style={{ border: '1px solid cyan', height: '500px' }} className="ms-5 pt-5 ps-5 pe-5 table-responsive-sm">
+                    <div style={{ height: '500px' }} className="ms-5 pt-5 ps-5 pe-5 table-responsive-sm">
                         <table class="table table-striped table-dark">
                             <thead>
                                 <tr>
@@ -45,10 +46,10 @@ const ManageSubject = () => {
                             <tbody>
 
                                 {
-                                    services.map(service => <tr id="deletedService">
-                                        <td>{service._id}</td>
-                                        <td>{service.serviceName}</td>
-                                        <td><button onClick={() => deleteService(service._id)} className="btn btn-primary">Delete</button></td></tr>)
+                                    subjects.map(subject => <tr id="deletedService">
+                                        <td>{subject.name}</td>
+                                        <td>{subject.student}</td>
+                                        <td><button onClick={() => deleteService(subject._id)} className="btn btn-primary">Delete</button></td></tr>)
                                 }
 
 

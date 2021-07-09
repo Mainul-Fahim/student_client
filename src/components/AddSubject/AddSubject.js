@@ -5,24 +5,23 @@ import Navbar from '../Home/Navbar/Navbar';
 const AddSubject = () => {
    
     const { register, handleSubmit, watch, errors } = useForm();
-    const [checkOutDate, setCheckOutDate] = useState({ orderDate: new Date() });
 
     const onSubmit = data => {
         console.log(data);
-        const jobsData = {
+        const subjectData = {
             name: data.name,
             //id: data.id,
             student: data.student,
             
             
         };
-        const url = `https://calm-bastion-47822.herokuapp.com/addJobs`;
+        const url = `http://localhost:5000/addSubject`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(jobsData)
+            body: JSON.stringify(subjectData)
         })
             .then(res => {
                 console.log(res);
