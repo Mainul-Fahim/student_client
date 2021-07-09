@@ -55,7 +55,7 @@ const ManageSubject = () => {
                                 {
                                     subjects.map(subject => <tr id="deletedService">
                                         <td>{subject.name}</td>
-                                        <td>{students.map(student=>{return student.name===subject.student?<li style={{listStyle:'none'}}>{subject.student}</li>:<li style={{listStyle:'none'}}></li>})}</td>
+                                        <td>{subject.student}</td>
                                         <td><button onClick={() => deleteService(subject._id)} className="btn btn-primary">Delete</button></td></tr>)
                                 }
 
