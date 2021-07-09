@@ -39,7 +39,7 @@ const ManageStudent = () => {
             </div>
             <div className="container-fluid row">
                 <div>
-                    <h1 className="text-center mt-3">Student Table</h1>
+                    <h1 className="text-center mt-3">Student <span style={{color: '#40B4E0'}}>Table</span></h1>
                     <br />
                     <div style={{ height: '500px' }} class="table-responsive-sm" className="ms-5 pt-5 ps-5 pe-5">
                         <table class="table table-striped table-dark">

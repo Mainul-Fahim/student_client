@@ -39,7 +39,7 @@ const ManageSubject = () => {
             </div>
             <div className="container-fluid row">
                 <div>
-                    <h1 className="text-center mt-3">Student Table</h1>
+                    <h1 className="text-center mt-3">Subject <span style={{color: '#40B4E0'}}>Table</span></h1>
                     <br />
                     <div style={{ height: '500px' }} className="ms-5 pt-5 ps-5 pe-5 table-responsive-sm">
                         <table class="table table-striped table-dark">
