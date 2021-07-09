@@ -17,7 +17,7 @@ const AddSubject = () => {
             
             
         };
-        const url = `http://localhost:5000/addSubject`;
+        const url = `https://obscure-bayou-72939.herokuapp.com/addSubject`;
         fetch(url, {
             method: 'POST',
             headers: {

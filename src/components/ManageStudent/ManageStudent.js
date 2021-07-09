@@ -8,20 +8,20 @@ const ManageStudent = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/students')
+        fetch('https://obscure-bayou-72939.herokuapp.com/students')
             .then(res => res.json())
             .then(data => setStudents(data));
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/subjects')
+        fetch('https://obscure-bayou-72939.herokuapp.com/subjects')
             .then(res => res.json())
             .then(data => setSubjects(data));
     }, [])
 
     const deleteStudent = id => {
         console.log(id);
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://obscure-bayou-72939.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

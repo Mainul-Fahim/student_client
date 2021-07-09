@@ -19,7 +19,7 @@ const AddStudent = () => {
             dateOfBirth: data.dateOfBirth,
             
         };
-        const url = `http://localhost:5000/addStudent`;
+        const url = `https://obscure-bayou-72939.herokuapp.com/addStudent`;
         fetch(url, {
             method: 'POST',
             headers: {
