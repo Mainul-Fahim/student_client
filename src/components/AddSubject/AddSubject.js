@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navbar from '../Home/Navbar/Navbar';
+import { useHistory } from "react-router-dom";
 
 const AddSubject = () => {
    
     const { register, handleSubmit, watch, errors } = useForm();
+    let history = useHistory();
 
     const onSubmit = data => {
         console.log(data);
@@ -28,7 +30,7 @@ const AddSubject = () => {
                 if(res)
                     {
                         alert("successfully added");
-                        
+                        history.push("/manageSubject");
                     }
             })
     };

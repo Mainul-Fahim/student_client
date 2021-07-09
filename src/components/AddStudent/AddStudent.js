@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './AddStudent.css';
 import Navbar from '../Home/Navbar/Navbar';
+import { useHistory } from "react-router-dom";
 
 const AddStudent = () => {
     
     const { register, handleSubmit, watch, errors } = useForm();
-   
+    let history = useHistory();
+
     const onSubmit = data => {
         console.log(data);
         const studentsData = {
@@ -30,7 +32,7 @@ const AddStudent = () => {
                 if(res)
                     {
                         alert("successfully added");
-                        
+                        history.push("/manageStudent");
                     }
             })
     };
