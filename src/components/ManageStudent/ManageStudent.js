@@ -49,7 +49,7 @@ const ManageStudent = () => {
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Date of Birth</th>
-                                    {/* <th>Subjects</th> */}
+                                    <th>Subjects</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -61,7 +61,7 @@ const ManageStudent = () => {
                                         <td> {student.email}</td>
                                         <td>{student.phone}</td>
                                         <td>{student.dateOfBirth}</td>
-                                        {/* {subjects.map(subject=><td>{subject.name}</td>)} */}
+                                        <td>{subjects.map(subject=>{return subject.student===student.name?<li style={{listStyle:'none'}}>{subject.name}</li>:<li style={{listStyle:'none'}}></li>})}</td>
                                         <td><button onClick={() => deleteStudent(student._id)} className="btn btn-primary">Delete</button></td></tr>)
                                 }
 
